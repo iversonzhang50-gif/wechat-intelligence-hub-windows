@@ -1,0 +1,27 @@
+# Local WeChat data and generated intelligence reports
+output/
+dist/
+release-manifest.json
+contacts/*
+!contacts/README.md
+!contacts/*.example.txt
+
+# Local databases, credentials, caches, and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.env
+.env.*
+!.env.example
+config/*.local.json
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Local compatibility and reader state
+.wechat-intelligence-hub/
+.wechat-deal-radar/

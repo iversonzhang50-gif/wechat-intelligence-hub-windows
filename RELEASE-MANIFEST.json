@@ -1,0 +1,526 @@
+{
+  "edition": "0.9.2-win-preview.1",
+  "license": "AGPL-3.0-only",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 94,
+      "sha256": "59eb61f1093a0d4e92d1d92414b15629983feb981bd4835e3282ce63e917e568"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 317,
+      "sha256": "99ac89fad91a70470e7179042d6215607fd85e032f5f303c4fd799e664ffaaff"
+    },
+    {
+      "path": "COMMERCIAL-LICENSE.md",
+      "bytes": 1185,
+      "sha256": "a7729ed9a4bf8e404f2d15d365bbe7af8cbc649bd897ecbf033413274903ec7d"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1011,
+      "sha256": "5c21c490eab34a784f57bd2fb49553dad0c12619829de17679817348cd9d7773"
+    },
+    {
+      "path": "dependency-provenance.json",
+      "bytes": 4240,
+      "sha256": "89f0b68dc1f9b9d60d2a701dbe28a4cc71e648c70a6cfb85888d2ae292e79d83"
+    },
+    {
+      "path": "docs/KNOWN-LIMITATIONS.md",
+      "bytes": 1439,
+      "sha256": "26aa7effd76268547e87c3b804e3c39921a26744ee60419bfc60650ead30b320"
+    },
+    {
+      "path": "docs/RELEASE_ROADMAP.md",
+      "bytes": 1461,
+      "sha256": "79a716fdfeff93e9eda2bc464126e2cae40ad0d652b7627d2a7bb4df46eece99"
+    },
+    {
+      "path": "docs/releases/v0.9.2-preview.2.md",
+      "bytes": 2854,
+      "sha256": "e317a7ef01dcb70ca880dd41abf7bca2f1ad162be6b8abe1bd01d98859e9e1f6"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "bytes": 1656,
+      "sha256": "bc34e638e98c5d37b90a496a1e84ce04c080a4a8544fe595440aa72d1316552e"
+    },
+    {
+      "path": "docs/USAGE.md",
+      "bytes": 14018,
+      "sha256": "2b91661ad853e9a7ba7eda6da674958f13ae26727df895bd6343ad0cfd446247"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 2630,
+      "sha256": "1e111086c24e28ac93fa074c754158e1f26c13bc1383d331780eb2acf13d7926"
+    },
+    {
+      "path": "docs/WINDOWS-ACCESS.md",
+      "bytes": 2787,
+      "sha256": "684dd6db9dee4990b036211ece9771a8e19246a2ab9b9c963b4c62b376697974"
+    },
+    {
+      "path": "Install.cmd",
+      "bytes": 126,
+      "sha256": "6ac74c1d50c5fd23e297140596c38eb658af5f1429b7655461cbceea3f5bb5d9"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1618,
+      "sha256": "3f6f5146e253bca3ca9f98ba951e9917d876f4cbd9556a4eaf7bf2cab946ed82"
+    },
+    {
+      "path": "projects/rion-wechat-reader/.gitignore",
+      "bytes": 23,
+      "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+    },
+    {
+      "path": "projects/rion-wechat-reader/CAPABILITY_MATRIX.md",
+      "bytes": 5352,
+      "sha256": "c6c31771d7514af9353a82db24a1128a8449c7969f0c36923f6faccb8a234f9e"
+    },
+    {
+      "path": "projects/rion-wechat-reader/config.example.json",
+      "bytes": 555,
+      "sha256": "bcac83a3dfb85da4ceff6fb889aa712567bfb5890fef0abb27ba7e279d004154"
+    },
+    {
+      "path": "projects/rion-wechat-reader/docs/access-bundle-compatibility.md",
+      "bytes": 2982,
+      "sha256": "388ba28dfd72bdeae96051a9820ef32747405b99e832b9b37fb79156c05d2bd9"
+    },
+    {
+      "path": "projects/rion-wechat-reader/install.sh",
+      "bytes": 4320,
+      "sha256": "b88c8c44f99a9a7a240ef27563df72762d5a452e70ada3fb804d0b69d617d58f"
+    },
+    {
+      "path": "projects/rion-wechat-reader/keys.example.json",
+      "bytes": 457,
+      "sha256": "fee58f558706fd93340cfcc37db9b2656fc2a8a1ea0836840c423d7a3114f89e"
+    },
+    {
+      "path": "projects/rion-wechat-reader/launcher.sh",
+      "bytes": 639,
+      "sha256": "9cf272369aa0ab7c2a43e81bffdd94c832ca34e8c6e221716e19d2c60c18616e"
+    },
+    {
+      "path": "projects/rion-wechat-reader/README.md",
+      "bytes": 7757,
+      "sha256": "8509efa530610c27b391c53fa5db7277699d098797ac75e47d49f43b12cf5194"
+    },
+    {
+      "path": "projects/rion-wechat-reader/rion_wechat_access.py",
+      "bytes": 19674,
+      "sha256": "1e718950ecaa7b02f4a0513d543d63adb13736ba19acab9b5562a6d55ec495a9"
+    },
+    {
+      "path": "projects/rion-wechat-reader/rion_wechat_reader.py",
+      "bytes": 156477,
+      "sha256": "ed15ca2814c4cefb4bb829ce915ad855655dbfc04d42cb4008db9a3b6e10511f"
+    },
+    {
+      "path": "projects/rion-wechat-reader/scripts/capability_gap.py",
+      "bytes": 5382,
+      "sha256": "c95db39a0f35451fb7901269b951a7ffc566f4bab8764d63181be21434924c8c"
+    },
+    {
+      "path": "projects/rion-wechat-reader/scripts/live_parity.py",
+      "bytes": 11051,
+      "sha256": "da275f70b8ec187daaca1fe3d1e8d61a9413af48d110fd4033b3ef194f11d845"
+    },
+    {
+      "path": "projects/rion-wechat-reader/scripts/validate_sqlcipher.sh",
+      "bytes": 1173,
+      "sha256": "d8d97b8dc27b90bf333c7a8960c330a1f4d2b0a2f282c52cf264bdda62447827"
+    },
+    {
+      "path": "projects/rion-wechat-reader/SECURITY.md",
+      "bytes": 1098,
+      "sha256": "c50abd0ad86322cb98134a16ea2c57c7cde0adc0a8556c22586c76e551457425"
+    },
+    {
+      "path": "projects/rion-wechat-reader/tests/test_access.py",
+      "bytes": 18240,
+      "sha256": "b7a58ae8eaa5e6ba3dffb3710e3053e8d50b9055858db48f76368be3afadee54"
+    },
+    {
+      "path": "projects/rion-wechat-reader/tests/test_live_parity.py",
+      "bytes": 3768,
+      "sha256": "f5f97779c4419683af4f56b663cf46f1ecba1bc840d478fc465b81988bc2b9d2"
+    },
+    {
+      "path": "projects/rion-wechat-reader/tests/test_reader.py",
+      "bytes": 51890,
+      "sha256": "19cb66b6e7bd8d91d0e670528d81b2964093365bc90ecc9b92d4ba8aefbe3a5f"
+    },
+    {
+      "path": "projects/rion-wechat-reader/windows_privacy.py",
+      "bytes": 1853,
+      "sha256": "37ebb36dc9978c9ec8585a2fa12d06e6de62f737ba0b31cf42958ba78f262f06"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/.gitignore",
+      "bytes": 425,
+      "sha256": "7135f9c02a8bf272eaa1f906c08ddfa0f91e0b7b9baafe703d65ac7531b4d630"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/assets/report.css",
+      "bytes": 1712,
+      "sha256": "bdc831d0b7dbb8ada663f19dcc811671f97e3e044441a2e8dbd52ef9d985e193"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/config/profile.example.json",
+      "bytes": 1206,
+      "sha256": "a3d0e2ea076890ffda6d914330d2215be745789b1357a63c3bea9264eef04bd8"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/contacts/README.md",
+      "bytes": 375,
+      "sha256": "d10a8e2fa9a0aeac2d270688f8a9f7260afeb2ee165018026473adc3f76a1b06"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/architecture.md",
+      "bytes": 2544,
+      "sha256": "d057516a76b5a23866e3ef23ba407cd363b8b33f388853c6ff035302cd3e3eea"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/classic-product-design-research-2026-08-28.md",
+      "bytes": 4455,
+      "sha256": "71f8606327e611adbf2542d7c14ecb2c45cd6b090401ae7cac1c435d06f4ae22"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/evaluation.md",
+      "bytes": 1269,
+      "sha256": "359e01efb491c8396acf51a8c6896fadf4335b0ba5258c8c77899defe5a3f2a4"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/group-digest-design.md",
+      "bytes": 6441,
+      "sha256": "c1445560056a2dcf13385bb9a904663320136c59e9fb88a5a3488c4c600d84ec"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/personalization-onboarding.md",
+      "bytes": 3489,
+      "sha256": "7fe541d3c15c7a9f8e372e8160534d1238206b3616ec154e2fbbdf3b3f4a1e62"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/release-checklist.md",
+      "bytes": 1500,
+      "sha256": "e0524c568dade636dc2845386cbdebee6b5ef17bfb00eef72bba71ee0dd051a9"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/docs/report-redesign-research-2026-08-28.md",
+      "bytes": 15243,
+      "sha256": "ebc77ad59d5cff7e5f9a8410d64b4ea1adb4e6a0d7334c5b11a8850dc0debbdf"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/intelligence_views.py",
+      "bytes": 42323,
+      "sha256": "fe132b750b3356edadf7dbf50b0e9a74a655f07dda7f5bdfb86fd035e0b21e5c"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/maintenance.py",
+      "bytes": 2067,
+      "sha256": "16321a4cf23fa3905a255aac13222032c77f31f20da171225f5d812e863700ea"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/opportunity_store.py",
+      "bytes": 28697,
+      "sha256": "097d99698cbeb88148a836374a12b545009d9041a85b2e6b9140ea2a75048ae9"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/README.md",
+      "bytes": 35108,
+      "sha256": "04474de6e315b8d08ca26f480734e351b24341bb02a906ffad2aae5492260eb4"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/report_bundle_flagship.py",
+      "bytes": 54015,
+      "sha256": "dca936b7058e7a58e1ebcb154b6c6b7865873447daee75b45d26591483f90bdb"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/report_bundle_html.py",
+      "bytes": 28625,
+      "sha256": "8e6d68915d666b1ade08a168aaef03a0b0f209bbb3b299795c7d145c48f8e901"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/samples/fake_vault_cli.py",
+      "bytes": 1490,
+      "sha256": "da9bca87c02e14c90472c3c87791a05a5874b8856694483997d5b5685d873c7c"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/samples/sample_chat.txt",
+      "bytes": 923,
+      "sha256": "6ea6aaf39f6f57f4a133407b3c334e26388ab6df636f291284fe703b36147ccd"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/scripts/build_release.py",
+      "bytes": 5400,
+      "sha256": "5319286c16da7b576250de8b782cc057a5e71fbdc56427da1f75e037dbbeaeae"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/scripts/run_demo.sh",
+      "bytes": 699,
+      "sha256": "689cf6ba0a843de40037aba0e723b29bb909ee3945d57af12b9204005175ec1d"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/scripts/run_group_daily.sh",
+      "bytes": 1061,
+      "sha256": "ac4928fc3ccdabd8d1354ce967754a0aa9924591d9922e2333049d4fab14221e"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/SECURITY.md",
+      "bytes": 1341,
+      "sha256": "f824fab9c021343e21864136dc1fee0af289091e3f005fa809c1d134c28115ec"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_compatibility.py",
+      "bytes": 4889,
+      "sha256": "b9c5d7887683b8fecf9eb880391bf46ad8dc9d9a532e92556daf46efd6c57d71"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_group_links.py",
+      "bytes": 23622,
+      "sha256": "bc3095d5efb0939e69a9e1ddacab7468cc7bb1a3d057ec58e08ffb25a34b4859"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_intelligence_views.py",
+      "bytes": 23625,
+      "sha256": "e52a8214c1da3674aa121ea14b68587cb0bfa0345c9b3e66407781959eadbccc"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_maintenance.py",
+      "bytes": 2195,
+      "sha256": "b7cde9b1d2fc2d8a91eedd54ce0a2930ba5ef3c06fb36604ab1c8e7166101e29"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_opportunities.py",
+      "bytes": 20056,
+      "sha256": "f783d14fe58ed3aca33af1ee52e8bf0466c9d0874bb86a2e44f0e0a586388f32"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_profile.py",
+      "bytes": 7854,
+      "sha256": "a9630c4c6a76ba07cc8adc6815bf98b5c960bcf78c0ffcd227625ca17e764cb5"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_reactivation.py",
+      "bytes": 8875,
+      "sha256": "38ebc21e8359a09ec0df65565c8181622eafdb2d5495d61336cd132af68e07e0"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_report_bundle.py",
+      "bytes": 8375,
+      "sha256": "672b7805cda1707e3c869557d88264b6b38b7248f8ed3728b93ac21832c563f0"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/tests/test_rion_reader_integration.py",
+      "bytes": 8027,
+      "sha256": "799b6ac12098921cf2c564af45f077a8245ce93c2f3106700fe6a3c6c1f28c06"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/wechat_deal_radar.py",
+      "bytes": 377,
+      "sha256": "f51549d1e9c1aa51b6db32a5275c4ae48b15db0618bbc3a917bce7d9fae00931"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/wechat_intelligence_hub.py",
+      "bytes": 341066,
+      "sha256": "36e6e57ec53c409e055b5cbea5d63ac3944b6693e680df934cb125814dca6d70"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/windows_privacy.py",
+      "bytes": 1853,
+      "sha256": "37ebb36dc9978c9ec8585a2fa12d06e6de62f737ba0b31cf42958ba78f262f06"
+    },
+    {
+      "path": "PUBLIC-REVIEW.json",
+      "bytes": 760,
+      "sha256": "07610e78661b4db80c60ed3e9bb8298394267651e631a59194afa0d34ed1badb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6107,
+      "sha256": "f49ce9c3922a859da14aa1f32326d3bf56b0c9345e6d67696ecc95175f4b8024"
+    },
+    {
+      "path": "README.upstream.md",
+      "bytes": 13267,
+      "sha256": "9329500fdcc60dc05cee1cef359068c24f563a015e5ac45cdc961c7168836259"
+    },
+    {
+      "path": "requirements-windows.lock",
+      "bytes": 735,
+      "sha256": "5520396a5e69f58d77bea149f58f9fc6eedc764d5ef75bfcd727d26df73ddbef"
+    },
+    {
+      "path": "scripts/install.sh",
+      "bytes": 5589,
+      "sha256": "7885437de061a83a86b4be623d26c81ba62a0fbeb9e924e3a140f900a8a190ab"
+    },
+    {
+      "path": "scripts/validate.sh",
+      "bytes": 5256,
+      "sha256": "84fa81857c8fd29566337cbb6083b124eb78982d6b80f98c177328238145ab15"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1572,
+      "sha256": "4e047306f34b2cfc854b7bd65c956a3adcf782a889dbd2938eff6f94d1d8b576"
+    },
+    {
+      "path": "SelfTest.cmd",
+      "bytes": 169,
+      "sha256": "beb8e04df5aaee9150e8ad04c5dcd1092db82bf3ec108496a367b451aee1e1e1"
+    },
+    {
+      "path": "skills/wechat-cli/references/access-onboarding.md",
+      "bytes": 6826,
+      "sha256": "25f7c62850ce899f4f4958d0317b3d4a3bc0d2091aad9481785ad5e16b8a5d86"
+    },
+    {
+      "path": "skills/wechat-cli/references/experimental-access.md",
+      "bytes": 6972,
+      "sha256": "e1b93d67d22bbce213acfabd1fc9610e5fbaa03be110beed4ca4717d96e48325"
+    },
+    {
+      "path": "skills/wechat-cli/references/usage.md",
+      "bytes": 4177,
+      "sha256": "985d9129476674872ae00c8101f13a98ace91e8f36880955054556120915cbbc"
+    },
+    {
+      "path": "skills/wechat-cli/scripts/access.sh",
+      "bytes": 742,
+      "sha256": "ea66571cc61baa9fc7a89182b33002838a4f7205270715429cce4bafd98f4d0c"
+    },
+    {
+      "path": "skills/wechat-cli/scripts/reader.ps1",
+      "bytes": 365,
+      "sha256": "03854708eee4a17e5e887ae47964e10ccf743c6639a423400905fa797417a576"
+    },
+    {
+      "path": "skills/wechat-cli/scripts/reader.sh",
+      "bytes": 913,
+      "sha256": "0e2bc02397711337cf09daaa4f14dcf3aebf3d74b45ed2687d523f73c14bc420"
+    },
+    {
+      "path": "skills/wechat-cli/SKILL.md",
+      "bytes": 5854,
+      "sha256": "f4a72fb6a3e9184d6481d3cabd8b0c782de46596372f1a4a983d8efa0c65b39f"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/references/commands.md",
+      "bytes": 10654,
+      "sha256": "e67d365be2a8e00fab7a65281ccff217247430017ae05a378f08cfd6d608022a"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/references/delivery.md",
+      "bytes": 3178,
+      "sha256": "65ecb1079c5deff3fa52c1d7390c51643e2bf94da10ae6facdc49b4db182dc82"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/references/group-editorial.md",
+      "bytes": 4760,
+      "sha256": "9c6445e404d375ea691855e82311418dbf9ec4eddaf742f966ee32fd1a2753d7"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/references/onboarding.md",
+      "bytes": 2367,
+      "sha256": "07ba5bbf97f02721198dfe741b012ab79435eb7f78ad75a6af15a0f23aec1e99"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/references/reply-style.md",
+      "bytes": 3905,
+      "sha256": "bfa65e4b204e76d02ef47ee384dbd124b5d4a36b68b12712e9b15c00d970ca3e"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/references/signal-rules.md",
+      "bytes": 6008,
+      "sha256": "43da998031eb3635b25dedbaae3dd23286ac02395074cb3022e2291d3406c6e9"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/scripts/hub.ps1",
+      "bytes": 362,
+      "sha256": "2aeafd13fb69f669f379991a95579836d56c2c5be70952e5af753861bb13c357"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/scripts/hub.sh",
+      "bytes": 1210,
+      "sha256": "55c5fabe1467a27644bd3bbc18e0728cb074913da2db8386f7e65b64761cad19"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/scripts/radar.sh",
+      "bytes": 139,
+      "sha256": "fbbc45de2be242d5eec03e8ab88b5d70ed9b94d87e2e1a4567919ed52330b99e"
+    },
+    {
+      "path": "skills/wechat-intelligence-hub/SKILL.md",
+      "bytes": 17844,
+      "sha256": "fd3c538739b178379cfdc94d0518363a440de4423dbcc3ccea1ec113a1fb0dc6"
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "bytes": 2439,
+      "sha256": "4521f21dc2db33084e77a81b5bfb12a5840052b27b79a884ddcb5ce54047e61a"
+    },
+    {
+      "path": "UPSTREAM.json",
+      "bytes": 1045,
+      "sha256": "f2fda1245893f8389d26f951c1e7a8ffc4dcea02ad301f44ca0b2029f10bb52f"
+    },
+    {
+      "path": "wechat.cmd",
+      "bytes": 201,
+      "sha256": "00c9076e9ff3ae931fa4aab0e538f55204d65114cce1531fc5ebbc24a4aedede"
+    },
+    {
+      "path": "windows/Install.ps1",
+      "bytes": 682,
+      "sha256": "5b42578c1bcb853b02f40110c6e0700179cbf877c197fb2b1dcf3151cb7e2bfd"
+    },
+    {
+      "path": "windows/install.py",
+      "bytes": 3006,
+      "sha256": "c8a076114213bfa761f8480b5262932a40a3b142c47f310a3cae0a3eba034d98"
+    },
+    {
+      "path": "windows/install_skills.py",
+      "bytes": 890,
+      "sha256": "fd13e67a9d472e4809b36b0b80792c00955acbc2af00b62a5aabeebf30a77179"
+    },
+    {
+      "path": "windows/launch.py",
+      "bytes": 1179,
+      "sha256": "189520e1028bdfba6d1212ab2e75fecdb6362e822a20b8990407be1a517e07a9"
+    },
+    {
+      "path": "windows/release_check.py",
+      "bytes": 1992,
+      "sha256": "54fcb0e73dbcc429766b7cf9987bc6bbe09af28138ce38f131093a6db8a8aa4b"
+    },
+    {
+      "path": "windows/self_test.py",
+      "bytes": 7504,
+      "sha256": "53d80fa52e1910abc3cfb0831d918727e2e09f7df7f508e1d5d2a9d1125d1d56"
+    },
+    {
+      "path": "WINDOWS-CHANGES.md",
+      "bytes": 1821,
+      "sha256": "aedd322cfcf2f9eb5557ced589b08937e130350ba43ba8a75eb23709f208a0fe"
+    },
+    {
+      "path": "WINDOWS-CHANGES.patch",
+      "bytes": 11004,
+      "sha256": "173fa4b251c7fe5652e2a344cad44a9616f2920dff9519baf1222cfa91c2bd9b"
+    }
+  ]
+}

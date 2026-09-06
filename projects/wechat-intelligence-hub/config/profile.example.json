@@ -1,0 +1,38 @@
+{
+  "profile_version": 2,
+  "owner_aliases": ["你的微信昵称", "你的英文名"],
+  "owner_social_handles": ["你的X用户名"],
+  "labels": {
+    "priority": [],
+    "commercial": [],
+    "creator": [],
+    "reactivation": []
+  },
+  "contact_daily": {
+    "scope": "hybrid"
+  },
+  "project_chat_terms": ["初稿", "终稿", "对接群", "交付群", "合作群", "项目群"],
+  "reply_style": {
+    "history_days": 30,
+    "minimum_chat_messages": 5
+  },
+  "group_recap_senders": {
+    "示例群名": ["日报发布者昵称"]
+  },
+  "group_recap_time_windows": {
+    "示例群名": ["06:50-07:20"]
+  },
+  "context": {
+    "setup_status": "needs_context",
+    "personal_documents": ["/path/to/个人说明.md"],
+    "current_plan_documents": ["/path/to/本月计划.md"]
+  },
+  "intelligence_priorities": {
+    "focus_areas": ["AI", "赚钱", "培训", "商单", "出海", "产品", "Web3", "自媒体运营与增长", "合作", "B端AI赋能"],
+    "priority_keywords": ["你正在推进的项目名", "关键客户名"],
+    "deprioritize_keywords": ["与你无关的固定闲聊主题"],
+    "custom_topics": {
+      "你的行业主题": ["行业关键词1", "行业关键词2"]
+    }
+  }
+}

@@ -1,0 +1,248 @@
+--- a/projects/rion-wechat-reader/rion_wechat_reader.py
++++ b/projects/rion-wechat-reader/rion_wechat_reader.py
+@@ -1,3 +1,4 @@
++# Windows compatibility modifications: 2026-09-06. AGPL-3.0-only; see WINDOWS-CHANGES.md.
+ #!/usr/bin/env python3
+ """Clean-room, read-only WeChat reader contract.
+ 
+@@ -198,6 +199,9 @@
+ 
+ 
+ def safe_mode(path: Path) -> bool:
++    if os.name == "nt":
++        from windows_privacy import safe
++        return safe(path)
+     return not path.exists() or stat.S_IMODE(path.stat().st_mode) & 0o077 == 0
+ 
+ 
+@@ -1672,6 +1676,9 @@
+         with os.fdopen(fd, "w", encoding="utf-8") as handle:
+             handle.write(content)
+         os.chmod(temp_name, 0o600)
++        if os.name == "nt":
++            from windows_privacy import restrict
++            restrict(temp_name)
+         os.replace(temp_name, path)
+     finally:
+         if os.path.exists(temp_name):
+@@ -1841,12 +1848,12 @@
+     return classify_database_tables(tables)
+ 
+ 
+-def inspect_authorized_database(db: DatabaseSet, path: Path) -> list[str]:
++def inspect_authorized_database(db: DatabaseSet, path: Path) -> list[str] | None:
+     try:
+         with db.connect(path) as conn:
+             tables = {str(row[0]) for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+     except ReaderError:
+-        return []
++        return None
+     return classify_database_tables(tables)
+ 
+ 
+@@ -1911,6 +1918,7 @@
+         if stop:
+             break
+     authorized_encrypted_count = 0
++    unclassified_readable_count = 0
+     if keys_file and keys_file.is_file() and locked_paths:
+         if not safe_mode(keys_file):
+             raise ReaderError(f"密钥文件权限过宽，请先执行 chmod 600：{keys_file}", "unsafe_key_permissions")
+@@ -1920,9 +1928,11 @@
+             authorized_db = DatabaseSet(config)
+             for path in locked_paths:
+                 kinds = inspect_authorized_database(authorized_db, path)
+-                if not kinds:
++                if kinds is None:
+                     continue
+                 authorized_encrypted_count += 1
++                if not kinds:
++                    unclassified_readable_count += 1
+                 for kind in kinds:
+                     candidates[kind].append(str(path.resolve()))
+     return {
+@@ -1930,6 +1940,7 @@
+         "scanned_file_count": scanned,
+         "unreadable_or_encrypted_count": unreadable_or_encrypted,
+         "authorized_encrypted_count": authorized_encrypted_count,
++        "unclassified_readable_count": unclassified_readable_count,
+         "unresolved_database_count": unreadable_or_encrypted - authorized_encrypted_count,
+         "scan_error_count": scan_errors,
+         "truncated": truncated,
+@@ -2214,9 +2225,10 @@
+         pass
+     with tempfile.TemporaryDirectory(prefix="rion-wechat-cli-self-test-") as temp_dir:
+         source = Path(temp_dir) / "self-test.db"
+-        with sqlite3.connect(source) as conn:
+-            conn.execute("CREATE TABLE probe(value TEXT)")
+-            conn.execute("INSERT INTO probe VALUES('ok')")
++        with contextlib.closing(sqlite3.connect(source)) as conn:
++            with conn:
++                conn.execute("CREATE TABLE probe(value TEXT)")
++                conn.execute("INSERT INTO probe VALUES('ok')")
+         checks["sqlite"] = True
+         with Snapshot(source) as snapshot:
+             conn = sqlite3.connect(snapshot.resolve().as_uri() + "?mode=ro", uri=True)
+@@ -2244,6 +2256,9 @@
+             keys = Path(temp_dir) / "keys.json"
+             keys.write_text(json.dumps({"keys": {encrypted.name: key}}), encoding="utf-8")
+             keys.chmod(0o600)
++            if os.name == "nt":
++                from windows_privacy import restrict
++                restrict(keys)
+             config.write_text(json.dumps({"keys_file": str(keys)}), encoding="utf-8")
+             with DatabaseSet(config).connect(encrypted) as encrypted_conn:
+                 sqlcipher["roundtrip"] = encrypted_conn.execute("SELECT value FROM probe").fetchone()[0] == "encrypted-ok"
+@@ -2262,12 +2277,18 @@
+         raise ReaderError(f"配置已存在，未覆盖：{path}；确认后使用 --force")
+     path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+     os.chmod(path.parent, 0o700)
++    if os.name == "nt":
++        from windows_privacy import restrict
++        restrict(path.parent)
+     fd, temp_name = tempfile.mkstemp(prefix=path.name + ".", dir=path.parent)
+     try:
+         with os.fdopen(fd, "w", encoding="utf-8") as handle:
+             json.dump(value, handle, ensure_ascii=False, indent=2)
+             handle.write("\n")
+         os.chmod(temp_name, 0o600)
++        if os.name == "nt":
++            from windows_privacy import restrict
++            restrict(temp_name)
+         os.replace(temp_name, path)
+     finally:
+         if os.path.exists(temp_name):
+--- a/projects/wechat-intelligence-hub/report_bundle_flagship.py
++++ b/projects/wechat-intelligence-hub/report_bundle_flagship.py
+@@ -1,3 +1,4 @@
++# Windows compatibility modifications: 2026-09-06. AGPL-3.0-only; see WINDOWS-CHANGES.md.
+ #!/usr/bin/env python3
+ """Sectioned Markdown site and complete flagship HTML for WeChat reports."""
+ 
+@@ -686,6 +687,12 @@
+     pages = build_report_pages(sources)
+     pandoc = shutil.which("pandoc")
+     if not pandoc:
++        try:
++            import pypandoc
++            pandoc = pypandoc.get_pandoc_path()
++        except (ImportError, OSError):
++            pass
++    if not pandoc:
+         raise RuntimeError("生成综合 HTML 需要 pandoc。")
+ 
+     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
+--- a/projects/wechat-intelligence-hub/wechat_intelligence_hub.py
++++ b/projects/wechat-intelligence-hub/wechat_intelligence_hub.py
+@@ -1,3 +1,4 @@
++# Windows compatibility modifications: 2026-09-06. AGPL-3.0-only; see WINDOWS-CHANGES.md.
+ #!/usr/bin/env python3
+ from __future__ import annotations
+ 
+@@ -56,7 +57,7 @@
+     if configured:
+         return str(Path(configured).expanduser())
+     codex_root = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex"))).expanduser()
+-    candidates = [
++    candidates = ([Path(__file__).resolve().parents[1] / "rion-wechat-reader" / "rion_wechat_reader.py", codex_root / "bin" / "rion-wechat-cli.cmd"] if os.name == "nt" else []) + [
+         codex_root / "skills" / "wechat-cli" / "scripts" / "reader.sh",
+         Path(__file__).resolve().parents[2] / "skills" / "wechat-cli" / "scripts" / "reader.sh",
+         codex_root / "bin" / "rion-wechat-cli",
+@@ -544,8 +545,16 @@
+     re.I,
+ )
+ DEFAULT_RADAR_DB = "~/.wechat-intelligence-hub/radar.db"
+-DEFAULT_COMPAT_DIR = "~/.wechat-intelligence-hub/compatibility"
++DEFAULT_COMPAT_DIR = os.environ.get("WECHAT_HUB_COMPAT_DIR", "~/.wechat-intelligence-hub/compatibility")
+ DEFAULT_WECHAT_APP = "/Applications/WeChat.app"
++if os.name == "nt":
++    import winreg
++    try:
++        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Tencent\Weixin") as local_key:
++            DEFAULT_WECHAT_APP = str(Path(winreg.QueryValueEx(local_key, "InstallPath")[0]) / "Weixin.exe")
++    except OSError:
++        DEFAULT_WECHAT_APP = "Weixin.exe"
++
+ URL_PATTERN = re.compile(r"https?://[^\s<>()\"'，。！？、；；]+", re.I)
+ 
+ AMOUNT_PATTERN = re.compile(
+@@ -2016,7 +2025,12 @@
+     suggestions = _suggest_label_roles(discovered_labels)
+ 
+     output_path.parent.mkdir(parents=True, exist_ok=True)
++    if os.name == "nt":
++        from windows_privacy import restrict
++        restrict(output_path.parent)
+     output_path.write_text(json.dumps(profile, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
++    if os.name == "nt":
++        restrict(output_path)
+     report_path = Path(args.report).expanduser().resolve()
+     report_path.parent.mkdir(parents=True, exist_ok=True)
+     missing: list[str] = []
+@@ -3660,7 +3674,12 @@
+ def connect_radar_db(path_value: str | None) -> sqlite3.Connection:
+     db_path = Path(path_value or DEFAULT_RADAR_DB).expanduser()
+     db_path.parent.mkdir(parents=True, exist_ok=True)
++    if os.name == "nt":
++        from windows_privacy import restrict
++        restrict(db_path.parent)
+     conn = sqlite3.connect(db_path, timeout=15)
++    if os.name == "nt":
++        restrict(db_path)
+     conn.row_factory = sqlite3.Row
+     conn.execute("pragma journal_mode=wal")
+     conn.execute("pragma busy_timeout=15000")
+@@ -5909,7 +5928,7 @@
+     ]
+     if css.is_file():
+         command.extend(["--css", str(css)])
+-    result = subprocess.run(command, text=True, capture_output=True)
++    result = subprocess.run(command, text=True, capture_output=True, encoding="utf-8", errors="replace")
+     if result.returncode != 0:
+         detail = (result.stderr or result.stdout or "pandoc 转换失败").strip()
+         raise SystemExit(detail)
+@@ -6110,7 +6129,7 @@
+ 
+ def run_vault_cli(vault_cli: Path, vault_args: list[str], python_bin: str) -> Any:
+     command = [python_bin, str(vault_cli), *vault_args]
+-    result = subprocess.run(command, text=True, capture_output=True)
++    result = subprocess.run(command, text=True, capture_output=True, encoding="utf-8", errors="replace")
+     if result.returncode != 0:
+         raise SystemExit(
+             "vault_cli 调用失败：\n"
+@@ -6153,7 +6172,16 @@
+ 
+ 
+ def run_json_command(command: list[str]) -> Any:
+-    result = subprocess.run(command, text=True, capture_output=True)
++    if command and Path(command[0]).suffix.lower() == ".py":
++        command = [sys.executable, "-X", "utf8", *command]
++    if os.name == "nt" and command:
++        codex_root = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
++        own_launcher = codex_root / "bin" / "rion-wechat-cli.cmd"
++        if Path(command[0]).resolve() == own_launcher.resolve():
++            engine = codex_root / "share" / "wechat-intelligence-hub" / "projects" / "rion-wechat-reader" / "rion_wechat_reader.py"
++            command = [sys.executable, "-X", "utf8", str(engine), *command[1:]]
++    result = subprocess.run(command, text=True, capture_output=True, encoding="utf-8", errors="replace")
++
+     if result.returncode != 0:
+         raise SystemExit(
+             "命令调用失败：\n"
+@@ -6180,6 +6208,17 @@
+ 
+ def read_wechat_app_info(app_path_value: str = DEFAULT_WECHAT_APP) -> dict[str, str]:
+     app_path = Path(app_path_value).expanduser()
++    if os.name == "nt":
++        import win32api
++        try:
++            info = win32api.GetFileVersionInfo(str(app_path), "\\")
++            hi, lo = info["FileVersionMS"], info["FileVersionLS"]
++            version = f"{hi >> 16}.{hi & 65535}.{lo >> 16}.{lo & 65535}"
++            return {"path": str(app_path), "version": version, "build": version,
++                    "bundle_version": version}
++        except Exception:
++            return {"path": str(app_path), "version": "unknown", "build": "unknown", "bundle_version": "unknown"}
++
+     info_path = app_path / "Contents" / "Info.plist"
+     info: dict[str, Any] = {}
+     if info_path.exists():

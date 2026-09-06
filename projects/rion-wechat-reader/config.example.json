@@ -1,0 +1,16 @@
+{
+  "session_db": "/absolute/path/to/session/session.db",
+  "contact_db": "/absolute/path/to/contact/contact.db",
+  "message_dbs": [
+    "/absolute/path/to/message/message_0.db",
+    "/absolute/path/to/message/message_1.db"
+  ],
+  "favorite_db": "/absolute/path/to/favorite/favorite.db",
+  "sns_db": "/absolute/path/to/sns/sns.db",
+  "hardlink_db": "/absolute/path/to/hardlink/hardlink.db",
+  "resource_roots": [
+    "/absolute/path/to/authorized/wechat/resource-root"
+  ],
+  "keys_file": "~/.config/rion-wechat-reader/keys.json",
+  "self_username": ""
+}

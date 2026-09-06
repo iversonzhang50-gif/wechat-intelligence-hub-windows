@@ -1,0 +1,4 @@
+* text eol=lf
+*.patch -whitespace
+*.md whitespace=-blank-at-eol
+*.py whitespace=-blank-at-eof

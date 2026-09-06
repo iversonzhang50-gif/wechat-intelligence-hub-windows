@@ -1,0 +1,96 @@
+[
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "wheel": "cffi-2.1.1-cp312-cp312-win_amd64.whl",
+    "sha256": "f53e442b08449d42821fa4a4fba000095af9f62742a500f978a9f557ec44339a",
+    "url": "https://files.pythonhosted.org/packages/d9/79/615cc094e2fb508cade7de88d3b4f6c4ec2bab695c97bce9153dc65aadf5/cffi-2.1.1-cp312-cp312-win_amd64.whl",
+    "metadata_source": "https://pypi.org/pypi/cffi/2.1.1/json",
+    "license": "MIT-0",
+    "license_files_in_download": [
+      "cffi-2.1.1.dist-info/licenses/LICENSE"
+    ],
+    "bundled_in_source_release": false
+  },
+  {
+    "name": "cryptography",
+    "version": "46.0.3",
+    "wheel": "cryptography-46.0.3-cp311-abi3-win_amd64.whl",
+    "sha256": "a9a3008438615669153eb86b26b61e09993921ebdd75385ddd748702c5adfddb",
+    "url": "https://files.pythonhosted.org/packages/7e/bf/80fbf45253ea585a1e492a6a17efcb93467701fa79e71550a430c5e60df0/cryptography-46.0.3-cp311-abi3-win_amd64.whl",
+    "metadata_source": "https://pypi.org/pypi/cryptography/46.0.3/json",
+    "license": "Apache-2.0 OR BSD-3-Clause",
+    "license_files_in_download": [
+      "cryptography-46.0.3.dist-info/licenses/LICENSE",
+      "cryptography-46.0.3.dist-info/licenses/LICENSE.APACHE",
+      "cryptography-46.0.3.dist-info/licenses/LICENSE.BSD"
+    ],
+    "bundled_in_source_release": false
+  },
+  {
+    "name": "pycparser",
+    "version": "3.0",
+    "wheel": "pycparser-3.0-py3-none-any.whl",
+    "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+    "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+    "metadata_source": "https://pypi.org/pypi/pycparser/3.0/json",
+    "license": "BSD-3-Clause",
+    "license_files_in_download": [
+      "pycparser-3.0.dist-info/licenses/LICENSE"
+    ],
+    "bundled_in_source_release": false
+  },
+  {
+    "name": "pywin32",
+    "version": "311",
+    "wheel": "pywin32-311-cp312-cp312-win_amd64.whl",
+    "sha256": "b8c095edad5c211ff31c05223658e71bf7116daa0ecf3ad85f3201ea3190d067",
+    "url": "https://files.pythonhosted.org/packages/d1/a8/a0e8d07d4d051ec7502cd58b291ec98dcc0c3fff027caad0470b72cfcc2f/pywin32-311-cp312-cp312-win_amd64.whl",
+    "metadata_source": "https://pypi.org/pypi/pywin32/311/json",
+    "license": "PSF",
+    "license_files_in_download": [
+      "adodbapi/license.txt",
+      "pythonwin/license.txt",
+      "win32/license.txt",
+      "win32com/License.txt"
+    ],
+    "bundled_in_source_release": false
+  },
+  {
+    "name": "sqlcipher3",
+    "version": "0.6.2",
+    "wheel": "sqlcipher3-0.6.2-cp312-cp312-win_amd64.whl",
+    "sha256": "8bd60ffb7bfa65bd0e51da3d5c308553d7149f0091d4ea9f754c33d5ebbf0a66",
+    "url": "https://files.pythonhosted.org/packages/2e/1a/88e8a0b96a52d291e24424cf8a222a6c7cc5356fd0a2287086afff764c2e/sqlcipher3-0.6.2-cp312-cp312-win_amd64.whl",
+    "metadata_source": "https://pypi.org/pypi/sqlcipher3/0.6.2/json",
+    "license": "MIT",
+    "license_files_in_download": [
+      "sqlcipher3-0.6.2.dist-info/licenses/LICENSE"
+    ],
+    "bundled_in_source_release": false
+  },
+  {
+    "name": "zstandard",
+    "version": "0.25.0",
+    "wheel": "zstandard-0.25.0-cp312-cp312-win_amd64.whl",
+    "sha256": "ffef5a74088f1e09947aecf91011136665152e0b4b359c42be3373897fb39b01",
+    "url": "https://files.pythonhosted.org/packages/79/3b/fa54d9015f945330510cb5d0b0501e8253c127cca7ebe8ba46a965df18c5/zstandard-0.25.0-cp312-cp312-win_amd64.whl",
+    "metadata_source": "https://pypi.org/pypi/zstandard/0.25.0/json",
+    "license": "BSD-3-Clause",
+    "license_files_in_download": [
+      "zstandard-0.25.0.dist-info/licenses/LICENSE"
+    ],
+    "bundled_in_source_release": false
+  },
+  {
+    "name": "pypandoc-binary",
+    "version": "1.17",
+    "wheel": "pypandoc_binary-1.17-py3-none-win_amd64.whl",
+    "sha256": "76fae066cd2d7e78fb97f0ec8e9e36f437b07187b689b0b415ca18216f8f898a",
+    "url": "https://files.pythonhosted.org/packages/c6/b9/f47b77ba75ed5d47ec85fcc2ecfbf7f78e3a73347f3a09836634d930de98/pypandoc_binary-1.17-py3-none-win_amd64.whl",
+    "metadata_source": "https://pypi.org/pypi/pypandoc-binary/1.17/json",
+    "license": "MIT",
+    "license_files_in_download": [],
+    "bundled_in_source_release": false
+  }
+]

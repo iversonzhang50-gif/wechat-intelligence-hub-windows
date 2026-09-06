@@ -1,0 +1,28 @@
+{
+  "project": "Rion-Wu-tech/wechat-intelligence-hub",
+  "url": "https://github.com/Rion-Wu-tech/wechat-intelligence-hub",
+  "commit": "3afe33e0742ef4e92b4babe399bf471fdcd86a7b",
+  "upstream_version": "0.9.2-preview.2",
+  "edition": "0.9.2-win-preview.1",
+  "date": "2026-09-06",
+  "license": "AGPL-3.0-only",
+  "installed_code_comparison": [
+    {
+      "path": "projects/rion-wechat-reader/rion_wechat_reader.py",
+      "upstream_sha256": "4aee29b35d9c678b6347c5376d690c6b752a8e8cb9af5fc99a512aff6d4a465e",
+      "installed_sha256": "1e21cebc55975dd03ac497c7a2851de6b490ff7ef3fc97074732e7bd1e3e077f"
+    },
+    {
+      "path": "projects/wechat-intelligence-hub/wechat_intelligence_hub.py",
+      "upstream_sha256": "3cc4da917458b2dc24cfe1e92ffd2f0345effa932d81cac39b4fdfc3ff360d91",
+      "installed_sha256": "2959525aa954e841e346f8ff1fe8242f90c51ed40b56a5b8ec8896a02cb04beb"
+    }
+  ],
+  "not_bundled": [
+    "user data",
+    "access providers",
+    "Python runtime",
+    "third-party wheels",
+    "upstream design preview screenshots"
+  ]
+}
